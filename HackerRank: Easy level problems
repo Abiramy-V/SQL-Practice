@@ -12,5 +12,5 @@ OR city LIKE 'U%';
 
 ----- Note: '[aeiou]%' could also be used to query the list of city names starting with vowels
 
------
------
+----- Challenge name: 
+----- 
