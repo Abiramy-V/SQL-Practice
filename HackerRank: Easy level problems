@@ -1,4 +1,4 @@
------ Challenge name: "Weather Observation Station 6"
+----- 1.) Challenge name: "Weather Observation Station 6"
 ----- Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION.
 ----- Your result cannot contain duplicates.
 
@@ -8,9 +8,29 @@ WHERE city LIKE 'A%'
 OR city LIKE 'E%' 
 OR city LIKE 'I%' 
 OR city LIKE 'O%' 
-OR city LIKE 'U%';
+OR city LIKE 'U%'
 
 ----- Note: '[aeiou]%' could also be used to query the list of city names starting with vowels
 
------ Challenge name: 
------ 
+----- 2.) Challenge name: "Higher Than 75 MarKS"
+----- Query the Name of any student in STUDENTS who scored higher than 75 Marks.
+----- Order your output by the last three characters of each name.
+----- If two or more students both have names ending in the same last three characters
+----- (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+SELECT name
+FROM students
+WHERE MARKS > 75
+ORDER BY RIGHT(name,3)
+      , ID ASC
+
+----- 3.) Challenge name: "Type of Triangle"
+----- Write a query identifying the type of each record in the TRIANGLES table using its three side lengths. 
+----- Output one of the following statements for each record in the table:
+----- Equilateral: It's a triangle with  sides of equal length.
+----- Isosceles: It's a triangle with  sides of equal length.
+----- Scalene: It's a triangle with  sides of differing lengths.
+----- Not A Triangle: The given values of A, B, and C don't form a triangle.
+----- Explanation:
+
+
