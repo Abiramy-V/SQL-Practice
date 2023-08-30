@@ -42,4 +42,32 @@ CASE
 END
 FROM TRIANGLES
 
------ 4.) 
+----- 4.) Challenge name: "Top Earners"
+----- We define an employee's total earnings to be their monthly salary * months worked, 
+----- and the maximum total earnings to be the maximum total earnings for any employee in the Employee table.
+----- Write a query to find the maximum total earnings for all employees 
+----- as well as the total number of employees who have maximum total earnings. 
+----- Then print these values as 2 space-separated integers.
+
+WITH cte_total_earning AS 
+(
+SELECT salary*months AS earnings
+FROM Employee
+)
+SELECT TOP 1 earnings
+       ,COUNT(*) AS No_Individuals
+FROM cte_total_earning
+GROUP BY earnings
+ORDER BY earnings DESC
+
+----- Note: SELECT (months*salary) as earnings, COUNT(name) from employee GROUP BY earnings DESC LIMIT 1;
+
+----- 5.) Challenge name: "Weather Observation Station 2"
+----- Query the following two values from the STATION table:
+----- The sum of all values in LAT_N rounded to a scale of 2 decimal places.
+----- The sum of all values in LONG_W rounded to a scale of 2 decimal places.
+
+SELECT 
+ ROUND (SUM(LAT_N), 2)
+,ROUND(SUM(LONG_W), 2)  
+FROM station
