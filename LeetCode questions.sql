@@ -1,4 +1,4 @@
---- Level: Easy
+---- Level: Easy
 
 -- 1.) Problem: 1757. Recyclable and Low Fat Products
 -- Write a solution to find the ids of products that are both low fat and recyclable.
@@ -85,9 +85,36 @@ INNER JOIN
 ON p.product_id = s.product_id
 
 
+---- Level: Medium
+-- 1.) Problem: 570. Managers with at Least 5 Direct Reports
+-- Write a solution to find managers with at least five direct reports.
+-- Return the result table in any order.
 
+SELECT 
+    name 
+FROM Employee
+WHERE id IN
+(
+  SELECT managerId FROM Employee
+  GROUP BY managerId
+  HAVING COUNT(managerId) >= 5
+)
 
+-- or
 
+SELECT      
+       a.name 
+FROM        
+       Employee AS a
+JOIN       
+       Employee AS b
+ON 
+       a.id = b.managerId
+GROUP BY   
+       a.id
+      ,b.name
+HAVING 
+       COUNT(a.id) >= 5
 
 
 
