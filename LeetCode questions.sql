@@ -84,6 +84,14 @@ INNER JOIN
     Sales AS s
 ON p.product_id = s.product_id
 
+-- 8.) Problem: 1581. Customer Who Visited but Did Not Make Any Transactions
+-- Write a solution to find the IDs of the users who visited without making any transactions and the number of times they made these types of visits.
+-- Return the result table sorted in any order.
+
+
+
+
+       
 
 ---- Level: Medium
 -- 1.) Problem: 570. Managers with at Least 5 Direct Reports
